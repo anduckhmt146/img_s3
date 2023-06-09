@@ -1,10 +1,10 @@
-import axios from "axios";
-import { ChangeEvent } from "react";
+import axios from 'axios';
+import { ChangeEvent } from 'react';
 
 async function uploadToS3(e: ChangeEvent<HTMLFormElement>) {
   const formData = new FormData(e.target);
 
-  const file = formData.get("file");
+  const file = formData.get('file');
 
   if (!file) {
     return null;
@@ -33,7 +33,11 @@ function Upload() {
     <>
       <p>Please select file to upload</p>
       <form onSubmit={handleSubmit}>
-        <input type="file" accept="image/jpeg image/png" name="file" />
+        <input
+          type="file"
+          accept="image/jpeg image/png image/jpg"
+          name="file"
+        />
         <button type="submit">Upload</button>
       </form>
     </>

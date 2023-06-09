@@ -1,4 +1,3 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
 import S3 from "aws-sdk/clients/s3";
 import { randomUUID } from "crypto";
@@ -22,7 +21,6 @@ export default async function handler(
   const s3Params = {
     Bucket: process.env.BUCKET_NAME,
     Key,
-    Expires: 60,
     ContentType: `image/${ex}`,
   };
 
